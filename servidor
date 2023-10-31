@@ -138,8 +138,7 @@ def nick_update(conexao, nick):
 		
 		if (validar_nome(nick)):
 			nicks[conexao] = nick
-			conexao.enviar(b':'+ nickAtual + b' NICK '+ nick+ b'\r\n')
-			print(b':'+ nickAtual + b' NICK '+ nick+ b'\r\n' + b'testee')
+			conexao.enviar(b':%s NICK %s\r\n' % (nickAtual, nick))
 		else:
 			conexao.enviar(b':server 432 '+ nickAtual + b' '+ nick+ b' :Erroneous nickname\r\n')
 
