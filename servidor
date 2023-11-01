@@ -223,6 +223,7 @@ def leave_channel(conexao, channel):
 					print('FAILED')
 				
 			cont.remove(nicks[conexao])
+			del nicks[conexao]
 
 servidor = Servidor(6667)
 servidor.registrar_monitor_de_conexoes_aceitas(conexao_aceita)
