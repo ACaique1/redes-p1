@@ -221,7 +221,7 @@ def leave_channel(conexao, channel):
 					conexao_key.enviar(b':' + nicks[conexao] + b' PART ' + channel + b'\r\n')
 				else:
 					print('FAILED')
-			
+				del nicks[conexao_key]
 			cont.remove(nicks[conexao])
 
 servidor = Servidor(6667)
