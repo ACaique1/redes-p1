@@ -211,19 +211,22 @@ def notify_channel(new_member, canal_name):
 
 
 def leave_channel(conexao, channel):
-	
-	for cont in groups:
-		if channel.upper() in (canal_em_canal.upper() for canal_em_canal in cont):
-			
-			for nick in cont[1:]:
-				conexao_key = get_key(nick)
-				if conexao_key != 0:
-					conexao_key.enviar(b':' + nicks[conexao] + b' PART ' + channel + b'\r\n')
-				else:
-					print('FAILED')
-				
-			cont.remove(nicks[conexao])
-			del nicks[conexao]
+    global nicks  # Adicionando para acessar a variável global
+    
+    for cont in groups:
+        if channel.upper() in (canal_em_canal.upper() for canal_em_canal in cont):
+            
+            for nick in cont[1:]:
+                conexao_key = get_key(nick)
+                if conexao_key != 0:
+                    conexao_key.enviar(b':' + nicks[conexao] + b' PART ' + channel + b'\r\n')
+                else:
+                    print('FAILED')
+                
+                # Atualiza o dicionário de apelidos apenas para esse canal
+                cont.remove(nicks[conexao])
+                del nicks[conexao_key]
+
 
 servidor = Servidor(6667)
 servidor.registrar_monitor_de_conexoes_aceitas(conexao_aceita)
