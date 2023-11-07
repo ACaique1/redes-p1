@@ -224,8 +224,8 @@ def leave_channel(conexao, channel):
                     print('FAILED')
                 
                 # Atualiza o dicionário de apelidos apenas para esse canal
-                cont.remove(nicks[conexao])
-                del nicks[conexao_key]
+             cont.remove(nicks[conexao])
+                
 
 
 servidor = Servidor(6667)
