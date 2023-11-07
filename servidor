@@ -213,7 +213,7 @@ def notify_channel(new_member, canal_name):
 
 def leave_channel(conexao, channel):
 	print(nicks)
-	print('nicks acima')
+	print('teste acima')
 	for cont in groups:
 		if channel.upper() in (canal_em_canal.upper() for canal_em_canal in cont):
 			
