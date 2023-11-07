@@ -208,7 +208,6 @@ def notify_channel(new_member, canal_name):
 				else:
 					print('FAILED')
 
-
 def leave_channel(conexao, channel):
 
 	for cont in groups:
