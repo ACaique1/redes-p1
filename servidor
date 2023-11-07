@@ -176,7 +176,7 @@ def get_key(val):
     return 0
 
 def enter_channel(conexao, channel):
-	
+	print("ENTROUUU")
 	if channel.startswith(b'#'):
 	
 		if validar_nome(channel[1:]):
