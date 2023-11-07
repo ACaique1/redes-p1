@@ -30,7 +30,7 @@ def sair(conexao):
 						continue
 					conexao_key = get_key(nick)
 					if conexao_key != 0:
-						conexao_key.enviar(b':' + nicks[conexao] + b' QUIT :Connection closed\r\n')
+						conexao_key.enviar(b':' + nicks[conexao] + b' QUIT\r\n')
 					else:
 						print('FAILED')
 				
@@ -176,7 +176,6 @@ def get_key(val):
     return 0
 
 def enter_channel(conexao, channel):
-	print("ENTROUUU")
 	if channel.startswith(b'#'):
 	
 		if validar_nome(channel[1:]):
