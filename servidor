@@ -38,7 +38,7 @@ def sair(conexao):
 		print(conexao, 'conexão fechada')
 		conexao.fechar()
 		
-		
+	
 def dados_recebidos(conexao, dados):
 	
 	global opcao
