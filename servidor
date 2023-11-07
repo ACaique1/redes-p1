@@ -212,7 +212,8 @@ def notify_channel(new_member, canal_name):
 
 
 def leave_channel(conexao, channel):
-	
+	print(nicks)
+	print('nicks acima')
 	for cont in groups:
 		if channel.upper() in (canal_em_canal.upper() for canal_em_canal in cont):
 			
@@ -224,6 +225,8 @@ def leave_channel(conexao, channel):
 					print('FAILED')
 			
 			cont.remove(nicks[conexao])
+			print("remoção feita com sucesso")
+			print(nicks)
 
 servidor = Servidor(6667)
 servidor.registrar_monitor_de_conexoes_aceitas(conexao_aceita)
